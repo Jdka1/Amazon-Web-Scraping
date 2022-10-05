@@ -131,12 +131,10 @@ def search(query, html, explicit=False):
 [print('\n') for i in range(10)]
 
 
-q = 'magic mouse'
+q = 'tech'
 
 pages = gather_html_pages(q, 1)
 
 
 for page in pages:
-    search(query=q, html=page, explicit=True)
-
-# the quick brown fox jumps over the lazy dog
+    search(query=q, html=page, explicit=False)
