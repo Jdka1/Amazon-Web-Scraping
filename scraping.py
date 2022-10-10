@@ -127,17 +127,20 @@ def search(query, html, explicit=False):
 
 
 
-# queries = ['iphone x', 'iphone 11', 'iphone 12']
+queries = ['iphone x', 'iphone 11', 'iphone 12']
 
-queries = ['iphone x']
 
 for query in queries:
     pages = gather_html_pages(query, 1)
-    print(pages)
     for page in pages:
         product_data = search(query=query, html=page, explicit=True)
-        # for 
+        avg = 0
+        for product in product_data:
+            avg += product.price
+        
+        avg = round(avg / len(product_data))
         # return avg price of each query in queries
+    print(f'{query}: {avg}')
 
 
 
