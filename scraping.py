@@ -125,10 +125,17 @@ def search(query, html, explicit=False):
     
     [product.print_product('long') for product in data]
 
-q = 'tech'
-
-pages = gather_html_pages(q, 1)
 
 
-for page in pages:
-    search(query=q, html=page, explicit=False)
+# queries = ['iphone x', 'iphone 11', 'iphone 12']
+
+queries = ['iphone x']
+
+for query in queries:
+    pages = gather_html_pages(query, 1)
+    print(pages)
+    for page in pages:
+        search(query=query, html=page, explicit=True)
+
+
+
