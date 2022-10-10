@@ -122,8 +122,8 @@ def search(query, html, explicit=False):
         
     
     data = sorted(data, key=lambda product: product.price)
-    
-    [product.print_product('long') for product in data]
+    return data
+    # [product.print_product('long') for product in data]
 
 
 
@@ -135,7 +135,9 @@ for query in queries:
     pages = gather_html_pages(query, 1)
     print(pages)
     for page in pages:
-        search(query=query, html=page, explicit=True)
+        product_data = search(query=query, html=page, explicit=True)
+        # for 
+        # return avg price of each query in queries
 
 
 
