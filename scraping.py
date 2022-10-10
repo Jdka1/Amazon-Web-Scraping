@@ -124,12 +124,6 @@ def search(query, html, explicit=False):
     data = sorted(data, key=lambda product: product.price)
     
     [product.print_product('long') for product in data]
-    
-    
-    
-[print('hi') for i in range(1)]
-[print('\n') for i in range(10)]
-
 
 q = 'tech'
 
